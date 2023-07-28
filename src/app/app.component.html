@@ -1,0 +1,17 @@
+<form (submit)="submitLocation(cityName, countryCode)">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="City Name" #cityName>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Country Code" #countryCode>
+  </div>
+  <button type="submit">Get Weather</button>
+</form>
+
+<div *ngIf="weather">
+  <p>Temperature: {{weather.main.temp}}</p>
+  <p>Latitude: {{weather.coord.lat}}</p>
+  <p>Longitude: {{weather.coord.lon}}</p>
+  <p>Pressure: {{weather.main.pressure}}</p>
+  <p>Description: {{weather.weather[0].description}}</p>
+</div>
